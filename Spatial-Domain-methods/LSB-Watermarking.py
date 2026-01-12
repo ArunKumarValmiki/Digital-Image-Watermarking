@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load cover image (grayscale, uint8: 0–255)
-a = cv2.imread("cameraman.png", cv2.IMREAD_GRAYSCALE)
+a = cv2.imread("Images/cameraman.png", cv2.IMREAD_GRAYSCALE)
 m, n = a.shape
 
 # --- Step 1: Bit-plane decomposition ---
@@ -22,7 +22,7 @@ for i in range(8):
     plt.axis("off")
 
 # --- Step 2: Load watermark image (binary) ---
-w = cv2.imread("rice.jpeg", cv2.IMREAD_GRAYSCALE)
+w = cv2.imread("Images/rice.jpeg", cv2.IMREAD_GRAYSCALE)
 w = cv2.resize(w, (n, m))   # resize watermark to fit cover image
 _, w = cv2.threshold(w, 127, 1, cv2.THRESH_BINARY)  # binarize (0/1)
 
